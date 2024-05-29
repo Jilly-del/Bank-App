@@ -244,3 +244,11 @@ class _CreditCardState extends State<CreditCard> {
     );
   }
 }
+
+
+// git init
+// git add .
+// git commit -m 'new commit'
+// git remote add origin https://github.com/Jilly-del/JillyBank  
+//  git push -u origin master
+// https://github.com/Jilly-del/Bank-App
