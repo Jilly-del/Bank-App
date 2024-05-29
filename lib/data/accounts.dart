@@ -31,13 +31,3 @@ Map<String, dynamic> account4 = {
 };
 
 var accounts = [account1, account2, account3, account4];
-
-// void creatUserName(account) {
-//   account.forEach((account) {
-//     account['username'] = account['owner']!
-//         .toLowerCase()
-//         .split(' ')
-//         .map((user) => user[0])
-//         .join();
-//   });
-// }
