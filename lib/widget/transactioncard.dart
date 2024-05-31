@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// import 'package:jilly_bank/utilities/themecolor.dart';
 import 'package:jilly_bank/utilities/themestyle.dart';
 import 'package:jilly_bank/widget/transactionpage.dart';
 

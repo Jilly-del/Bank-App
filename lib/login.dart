@@ -1,6 +1,8 @@
 import 'package:jilly_bank/data/accounts.dart';
 import 'package:jilly_bank/homepage.dart';
 import 'package:flutter/material.dart';
+import 'package:jilly_bank/utilities/themecolor.dart';
+import 'package:jilly_bank/utilities/themestyle.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -76,6 +78,9 @@ class _LoginState extends State<Login> {
             ),
           ),
           TextButton(
+              style: TextButton.styleFrom(
+                  padding: const EdgeInsets.all(20),
+                  backgroundColor: ThemeColor.green),
               onPressed: () {
                 String enteredUsername = usernameController.text;
                 var enteredPin = int.tryParse(pinController.text);
@@ -85,6 +90,7 @@ class _LoginState extends State<Login> {
 
                 if (currentAccount['username'] == enteredUsername &&
                     currentAccount['pin'] == enteredPin) {
+                  print(currentAccount);
                   Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -116,7 +122,13 @@ class _LoginState extends State<Login> {
                   pinController.clear();
                 }
               },
-              child: const Text('login '))
+              child: const Text(
+                'login ',
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white),
+              ))
         ]),
       ),
     );

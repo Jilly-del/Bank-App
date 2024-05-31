@@ -63,9 +63,11 @@ class _SettingState extends State<Setting> {
                 Text(
                   'Notifications',
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                )
+                ),
               ],
-            )
+            ),
+            const Divider(height: 20, thickness: 1),
+            const SizedBox(height: 10)
           ],
         ),
       ),

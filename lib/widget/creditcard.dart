@@ -131,23 +131,41 @@ class _CreditCardState extends State<CreditCard> {
                                       ),
                                     ),
                                     ElevatedButton(
+                                        style: ElevatedButton.styleFrom(
+                                            padding: const EdgeInsets.all(20),
+                                            backgroundColor: ThemeColor.green),
                                         onPressed: () {
-                                          var transfer = accounts.firstWhere(
-                                              (user) =>
+                                          var receiverUsername =
+                                              accounts.firstWhere((user) =>
                                                   user['username'] ==
                                                   transferuserController.text);
                                           var amount = int.parse(
                                               transferAmountController.text);
 
-                                          if (transfer != widget.acct &&
+                                          if (receiverUsername != null &&
+                                              receiverUsername['username'] !=
+                                                  widget.acct['username'] &&
                                               amount > 0 &&
-                                              amount <= availableBalance) {
+                                              amount <= availableBalance &&
+                                              receiverUsername['username'] ==
+                                                  transferuserController.text)
+
+                                          // (receiverUsername['username'] !=
+                                          //     widget.acct['username'] &&
+                                          // amount > 0 &&
+                                          // amount <= availableBalance &&
+                                          // receiverUsername['username'] ==
+                                          //     transferuserController.text)
+
+                                          {
                                             var receiver =
-                                                transfer['movements'] as List;
+                                                receiverUsername['movements']
+                                                    as List;
                                             receiver.add(amount);
                                             setState(() {
                                               availableBalance -= amount;
                                             });
+                                            Navigator.of(context).pop();
 
                                             transferAmountController.clear();
                                             transferuserController.clear();
@@ -188,9 +206,12 @@ class _CreditCardState extends State<CreditCard> {
                                             transferuserController.clear();
                                           }
                                         },
-                                        child: Text(
+                                        child: const Text(
                                           'Send',
-                                          style: ThemeStles.primaryTitle,
+                                          style: TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w600,
+                                              color: Colors.white),
                                         ))
                                   ]),
                                 ),
