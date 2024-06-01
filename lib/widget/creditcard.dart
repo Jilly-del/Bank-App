@@ -148,16 +148,7 @@ class _CreditCardState extends State<CreditCard> {
                                               amount > 0 &&
                                               amount <= availableBalance &&
                                               receiverUsername['username'] ==
-                                                  transferuserController.text)
-
-                                          // (receiverUsername['username'] !=
-                                          //     widget.acct['username'] &&
-                                          // amount > 0 &&
-                                          // amount <= availableBalance &&
-                                          // receiverUsername['username'] ==
-                                          //     transferuserController.text)
-
-                                          {
+                                                  transferuserController.text) {
                                             var receiver =
                                                 receiverUsername['movements']
                                                     as List;

@@ -12,7 +12,7 @@ class Call extends StatelessWidget {
         child: Row(
           children: [
             Text(
-              'Call',
+              'Call Page would be available real soon.....',
               style: ThemeStles.primaryTitle,
             ),
             const SizedBox(
