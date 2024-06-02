@@ -11,9 +11,17 @@ class Call extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(150, 40, 50, 50),
         child: Row(
           children: [
-            Text(
-              'Call Page would be available real soon.....',
-              style: ThemeStles.primaryTitle,
+            Column(
+              children: [
+                Text(
+                  'Call Page would be available real soon.....',
+                  style: ThemeStles.primaryTitle,
+                ),
+                Text(
+                  ' We got you just hold on for a min',
+                  style: ThemeStles.primaryTitle,
+                )
+              ],
             ),
             const SizedBox(
               width: 20,
